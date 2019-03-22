@@ -1,166 +1,100 @@
 var exercise = {};
 
+// Question 01
 exercise.hello = function(){
-    // ----------------------------------------
-    //   QUESTION 01
-    //   Return a string that says "Hello!"
-    // ----------------------------------------
-    return 'Error: Question 01 not implemented';
+    return 'Hello!';    
 };
 
+// Question 02
 exercise.numberArray = function(){
-    // ----------------------------------------
-    //   QUESTION 02
-    //   Return an array of numbers
-    // ----------------------------------------
-    return 'Error: Question 02 not implemented';
+    return [1,2,3,4];
 };
 
+// Question 03
 exercise.nameAndAge = function(){
-    // ----------------------------------------
-    //   QUESTION 03
-    //   Return an object with
-    //   a 'name' and 'age' property
-    // ----------------------------------------
-    return 'Error: Question 03 not implemented';
+    return { name : "bruce", age : 29 };
 };
 
+// Question 04
 exercise.objectArray = function(){
-    // ----------------------------------------
-    //   QUESTION 04
-    //   Return an array of empty objects
-    //   The array can have any length you like.
-    // ----------------------------------------
-    return 'Error: Question 04 not implemented';
+    return [{},{},{}];
 };
 
+// Question 05
 exercise.addProperty = function(someObject){
-    // ----------------------------------------
-    //   QUESTION 05
-    //   Add the property 'name' to someObject
-    //   Give 'name' any value you like.
-    // ----------------------------------------
-    return 'Error: Question 05 not implemented';
+    return someObject.name = "bruce";
 };
 
+// Question 06
 exercise.thirdElement = function(someArray){
-    // ----------------------------------------
-    //   QUESTION 06
-    //   Return the third element of array
-    // ----------------------------------------
-    return 'Error: Question 06 not implemented';
+    return someArray[2];
 };
 
+// Question 07
 exercise.concatenate = function(string1, string2, string3){
-    // ----------------------------------------
-    //   QUESTION 07
-    //   Return the concatenation of
-    //   string1, string2, string3
-    // ----------------------------------------
-    return 'Error: Question 07 not implemented';
+    return string1+string2+string3;
 };
 
+// Question 08
 exercise.greaterThanSix = function(someNumbers){
-    // ----------------------------------------
-    //   QUESTION 08
-    //   Filter array for values greater than 6
-    //   Return the filtered array
-    // ----------------------------------------
-    return 'Error: Question 08 not implemented';
+	return someNumbers.filter(function(elem){
+		return elem > 6;
+	});
 };
 
+// Question 09
 exercise.getNames = function(people){
-    // ----------------------------------------
-    //   QUESTION 09
-    //   Return a new array with
-    //   the "name" property values.
-    //
-    //   Example, for:
-    //   people = [
-    //         {name:'peter', age:18},
-    //         {name:'bruce', age:22},
-    //         {name:'clark', age:25},
-    //         {name:'diana', age:29}
-    //   ];
-    //
-    //   You should return
-    //     ['peter','bruce','clark','diana']
-    // ----------------------------------------
-    return 'Error: Question 09 not implemented';
+	return people.map(function(item){
+		return item.name;
+	});
 };
 
+// Question 10
 exercise.getSalaryTotal = function(people){
-    // ----------------------------------------
-    //   QUESTION 10
-    //   Return the sum of all the
-    //   salaries in array.
-    //
-    //   Example, for:
-    //   people = [
-    //         {name:'peter', salary:1000},
-    //         {name:'bruce', salary:2000},
-    //         {name:'clark', salary:3000},
-    //         {name:'diana', salary:4000}
-    //     ];
-    //
-    //   you should return
-    //     10000
-    // ----------------------------------------
-    return 'Error: Question 10 not implemented';
+	return people.reduce(function(previous,current){
+		return previous+current.salary;
+	},0);
 };
 
+// Question 11
 exercise.sortNumbers = function(someNumbers){
-    // ----------------------------------------
-    //   QUESTION 11
-    //   Sort numbers in array,
-    //   return the sorted array
-    //   Ascending or descenging.
-    // ----------------------------------------
-    return 'Error: Question 11 not implemented';
+    return someNumbers.sort(function(a,b){return a-b;});
 };
 
+// Question 12
 exercise.executeCallback = function(callback){
-    // ----------------------------------------
-    //   QUESTION 12
-    //   Execute callback
-    // ----------------------------------------
-    return 'Error: Question 12 not implemented';
+    callback();
 };
 
+// Question 13
 exercise.getPersonAndJob = function(payroll){
-    // ----------------------------------------
-    //   QUESTION 13
-    //   Return an array of people and jobs
-    //  [['person', 'job'], ['person,job'];
-    // ----------------------------------------
-    return 'Error: Question 13 not implemented';
+	var personAndJob = [];
+    payroll.forEach(function(item){
+    	personAndJob.push([item[1],item[2]]);
+    });
+    return personAndJob;
 };
 
+// Question 14
 exercise.getTotalPayroll = function(payroll){
-    // ----------------------------------------
-    //   QUESTION 14
-    //   Return the total payroll
-    //   as an integer, use reduce
-    // ----------------------------------------
-    return 'Error: Question 14 not implemented';
+	return payroll.reduce(function(previous, current){
+		return previous + Number(current[3]);
+	},0);
 };
 
+// Question 15
 exercise.getEarningsAbove = function(payroll,target){
-    // ----------------------------------------
-    //   QUESTION 15
-    //   Return the number of people with
-    //   earnings above target
-    // ----------------------------------------
-    return 'Error: Question 15 not implemented';
+	return (payroll.filter(function(item){
+		return target > Number(item[3]);
+	})).length;
 };
 
+// Question 16
 exercise.getNumberOfZipCodesWith = function(payroll,num){
-    // ----------------------------------------
-    //   QUESTION 16
-    //   Return the number of zip codes
-    //   with 'num' anywhere in them
-    // ----------------------------------------
-    return 'Error: Question 16 not implemented';
+	return (payroll.filter(function(item){
+		if (item[4].includes(num)) return true;
+		return false;
+	})).length;    
 };
 
 
